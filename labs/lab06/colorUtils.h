@@ -21,11 +21,12 @@ int max(int a, int b, int c);
 int min(int a, int b, int c);
 
 /**
- * TODO: add documentation here
+ * Returns the average of all RGB color values
  */
 int toGrayScale(int *r, int *g, int *b, Mode mode);
 
 /**
- * TODO: add documentation here
+ * Returns different values to each of the three RGB components using
+ * formulas for each color
  */
 int toSepia(int *r, int *g, int *b);
