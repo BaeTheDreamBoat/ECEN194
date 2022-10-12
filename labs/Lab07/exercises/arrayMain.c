@@ -33,6 +33,12 @@ int main(int argc, char **argv) {
   index = getIndexOfMax(arr, n);
   printf("Index om Maximum element is = %d\n", index);
 
+  int *resultSize = 0;
+  int threshold = 10;
+  int *resultArray = filterThreshold(arr, n, threshold, resultSize);
+  printf("Result Size = %d\n", *resultSize);
+
+/**
   int m = 10;
   int **table = createMultiplicationTable(n, m);
   printTable(table, n, m);
@@ -41,10 +47,11 @@ int main(int argc, char **argv) {
   free(table[i]);
   }
   free(table);
+**/
 
   free(arr);
 
-  free(resultSize);
+  free(resultArray);
 
   return 0;
 }

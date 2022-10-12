@@ -69,7 +69,7 @@ double getMean(const int *arr, int size) {
   for (int i=0; i<size; ++i) {
     sum += arr[i];
   }
-  return sum/size;
+  return ((double)sum/size);
 }
 
 int getMin(const int *arr, int size) {
@@ -135,11 +135,19 @@ int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) 
   int result = 0;
   for (int i=0; i<size; ++i) {
     if (arr[i]>=threshold) {
-        resultSize[result] = arr[i];
         ++result;
     }
   }
-  return resultSize;
+  int *newArray = (int*) malloc(sizeof(int)*(size-result));
+  int j = 0;
+  for (int i=0; i<0; ++i) {
+     if (arr[i]>=threshold) {
+        newArray[j] = arr[i];
+        ++j;
+    }
+  }
+  resultSize = &result;
+  return newArray;
 }
 
 int **createMultiplicationTable(int n, int m) {
