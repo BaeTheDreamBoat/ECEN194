@@ -128,25 +128,19 @@ int getIndexOfMax(const int *arr, int size) {
   return index;
 }
 
-/**int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
+int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
   if(arr == NULL) {
     return 0;
   }
   int result = 0;
   for (int i=0; i<size; ++i) {
     if (arr[i]>=threshold) {
+        resultSize[result] = arr[i];
         ++result;
-    }
-  }
-  int *resultSize = (int *) malloc(sizeof(int)*result);
-  for (int r=0; r<result; ++r) {
-    if (arr[r]>=threshold) {
-      resultSize[r] = arr[r];
     }
   }
   return resultSize;
 }
-**/
 
 int **createMultiplicationTable(int n, int m) {
   int **table = (int **) malloc(sizeof(int *)*n);
