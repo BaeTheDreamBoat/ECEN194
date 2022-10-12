@@ -25,7 +25,7 @@ int * generateRandomArray(int size);
 /**
  * Sums the elements in the given array.
  */
-int getSum(int *arr, int size);
+int getSum(const int *arr, int size);
 
 /**
  * Frees the given (n x m) table
@@ -33,36 +33,37 @@ int getSum(int *arr, int size);
 void freeTable(int **table, int n, int m);
 
 /**
- * TODO: add your own documentation
+ * computes teh average of elements in arr
  */
 double getMean(const int *arr, int size);
 
 /**
- * TODO: add your own documentation
+ * returns the minimum element in arr
  */
 int getMin(const int *arr, int size);
 
 /**
- * TODO: add your own documentation
+ * returns the index of the minimum element in arr
  */
 int getIndexOfMin(const int *arr, int size);
 
 /**
- * TODO: add your own documentation
+ * returns the maximum element in arr
  */
 int getMax(const int *arr, int size);
 
 /**
- * TODO: add your own documentation
+ * returns the index of the maximum element
  */
 int getIndexOfMax(const int *arr, int size);
 
 /**
- * TODO: add your own documentation
+ * returns the number of elements in arr that are greater than or equal to threshold and returns
+ * an array only composed of elements in arr that are greater than or equal to threshold
  */
 int * filterThreshold(const int *arr, int size, int threshold, int *resultSize);
 
 /**
- * TODO: add your own documentation
+ * creates and returns a new (n x m) 2-D array that contains the values in a multiplication table
  */
 int **createMultiplicationTable(int n, int m);
