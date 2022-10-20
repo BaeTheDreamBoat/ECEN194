@@ -13,14 +13,18 @@ int getCornStats(double radius, double height, double *volume, double *weight) {
   if (radius<=0||height<=0) {
     return 1;
   }
-  else {
   *volume = pow(radius,2)*height*M_PI;
   *weight = *volume*720.83;
   return 0;
-  }
 }
 
 int fizzBuzzSum(const int *arr, int n, int *huskerTotal, int *mavTotal) {
+  if (arr==NULL) {
+    return 1;
+  }
+  else if (n<=0){
+    return 2;
+  }
   *huskerTotal=0;
   *mavTotal=0;
   for (int i=0; i<n; ++i){
@@ -35,7 +39,10 @@ int fizzBuzzSum(const int *arr, int n, int *huskerTotal, int *mavTotal) {
 }
 
 int *merge(const int *a, int n, const int *b, int m) {
-  if(n<=0||m<=0){
+  if (a==NULL||b==NULL) {
+    return 0;
+  }
+  else if(n<=0||m<=0){
     return 0;
   }
   int *arr=malloc(sizeof(int)*(n+m));
