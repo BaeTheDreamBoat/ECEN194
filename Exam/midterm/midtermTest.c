@@ -13,8 +13,8 @@ int main(int argc, char **argv) {
   printf("weight = %f\n", weight);
 
 
-  int n = 7;
-  int a[] = {2, 9, 4, 25, 57, 45, 53};
+  int n = 8;
+  int a[] = {2, 9, 4, 25, 57, 45, 53, 15};
   int m = 5;
   int b[] = {9, 0, 2, 1, 0};
 
@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
   int *c = merge(a, n, b, m);
   printArray(c, n+m);
 
+  free(c);
 
   return 0;
 }
