@@ -10,7 +10,10 @@
 #include "midterm.h"
 
 int getCornStats(double radius, double height, double *volume, double *weight) {
-  if (radius<=0||height<=0) {
+  if (volume==NULL||weight==NULL){
+    return 1;
+  }
+  else if (radius<=0||height<=0) {
     return 1;
   }
   *volume = pow(radius,2)*height*M_PI;
@@ -19,7 +22,7 @@ int getCornStats(double radius, double height, double *volume, double *weight) {
 }
 
 int fizzBuzzSum(const int *arr, int n, int *huskerTotal, int *mavTotal) {
-  if (arr==NULL) {
+  if (arr==NULL||huskerTotal==NULL||mavTotal==NULL) {
     return 1;
   }
   else if (n<=0){

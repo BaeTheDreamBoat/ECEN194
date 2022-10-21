@@ -14,12 +14,13 @@ int main(int argc, char **argv) {
 
 
   int n = 8;
-  int a[] = {2, 9, 4, 25, 57, 45, 53, 15};
+  //int a[] = {2, 9, 4, 25, 57, 45, 53, 15};
+  //int *ptr=&a;
   int m = 5;
   int b[] = {9, 0, 2, 1, 0};
 
   int huskerTotal, mavTotal;
-  fizzBuzzSum(a, n, &huskerTotal, &mavTotal);
+  fizzBuzzSum(*ptr, n, &huskerTotal, &mavTotal);
   printf("huskerTotal = %d\n", huskerTotal);
   printf("mavTotal = %d\n", mavTotal);
 
