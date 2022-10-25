@@ -1,15 +1,36 @@
+/**
+ * Ryan Brown
+ * 10/25/22
+ * 
+ * 
+*/
 
-//TODO: define, document, and implement this function
-initializeBlankString();
+/**
+ * takes two arguments(int, string) and alters the string and sets
+ * all characters to '_' and null-terminates it. The string returns
+ * nothing
+*/
+void initializeBlankString(int lenght, char *string);
 
-//TODO: define, document, and implement this function
-printWithSpaces();
+/**
+ * prints a string with a space between each character.
+ * Returns nothing
+*/
+void printWithSpaces(char *string);
 
-//TODO: define, document, and implement this function
-revealGuessedLetter();
+/**
+ * takes two strings and a character and returns an integer. The first
+ * string is the soulution. The second string will be the revealed string.
+ * The character is the letter guessed by the user. The function should
+ * return 1 if the reveal string is modified and a 0 if it is not.
+*/
+int revealGuessedLetter(const char *solution, char *reveal, char guess);
 
-//TODO: define, document, and implement this function
-checkGuess();
+/**
+ * takes two strings and returns 1 if they are the same and 0 if they are
+ * different
+*/
+int checkGuess(char *a, char *b);
 
 
 //the following functions have been done for you.
