@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
     printf("Usage: %s n\n", argv[0]);
     exit(1);
   }
-  srandom(time(NULL));
+  srand(time(NULL));
 
   n = atoi(argv[1]);
   int *arr = randomArray(n);
@@ -42,6 +42,7 @@ int main(int argc, char **argv) {
   double ave = average(arr, n);
   printf("\nAverage = %f\n", ave);
 
+  free(arr);
   return 0;
 }
 
@@ -49,17 +50,20 @@ int *randomArray(int n) {
   int *a = malloc(n * sizeof(int));
   int i;
   for(i=0; i<n; i++) {
-    a[i] = random() % 10;
+    a[i] = rand() % 10;
   }
-  return;
+
+  return a;
 }
 
 double average(const int *a, int n) {
-  int i, sum;
-  for(i=0; i<N; i++) {
+  int i;
+  int sum = 0;
+  for(i=0; i<n; i++) {
     sum += a[i];
   }
-  return (double) sum / n;
+
+  return (double)sum / n;
 }
 
 void printArray(const int *a, int n) {
