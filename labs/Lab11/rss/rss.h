@@ -1,9 +1,13 @@
 
 /**
- * TODO: provide documentation for your structure
+ * Rss consists of a title, link, date, and description all
+ * defined as strings
  */
 typedef struct {
-  // TODO: define your structure here
+  char *title;
+  char *link;
+  char *date;
+  char *description;
 } Rss;
 
 /**
