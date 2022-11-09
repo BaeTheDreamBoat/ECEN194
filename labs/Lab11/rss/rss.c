@@ -4,10 +4,8 @@
 
 #include "rss.h"
 
-// TODO: implement these functions
-
 Rss * createEmptyRss() {
-    return createEmptyRss("","","");
+    return createEmptyRss("","","","");
 }
 
 Rss * createRss(const char * title, const char * link, const char * date, const char * description) {
@@ -30,28 +28,47 @@ Rss * createRss(const char * title, const char * link, const char * date, const 
 
 void initRss(Rss *feed, const char* title, const char* link, const char* date,
                const char* description) {
-    rss->title = (char *)malloc(sizeof(char) * (strlen(title) + 1));
-    strcpy(rss->title, title);
+    feed->title = (char *)malloc(sizeof(char) * (strlen(title) + 1));
+    strcpy(feed->title, title);
 
-    rss->link = (char *)malloc(sizeof(char) * (strlen(link) + 1));
-    strcpy(rss->link, link);
+    feed->link = (char *)malloc(sizeof(char) * (strlen(link) + 1));
+    strcpy(feed->link, link);
 
-    rss->date = (char *)malloc(sizeof(char) * (strlen(date) + 1));
-    strcpy(rss->date, date);
+    feed->date = (char *)malloc(sizeof(char) * (strlen(date) + 1));
+    strcpy(feed->date, date);
 
-    rss->description = (char *)malloc(sizeof(char) * (strlen(description) + 1));
-    strcpy(rss->description, description);
+    feed->description = (char *)malloc(sizeof(char) * (strlen(description) + 1));
+    strcpy(feed->description, description);
 
     return;
 }
 
+char *rssToString(const Rss*rss) {
+  if (rss == NULL) {
+    char *result = (char *)malloc(sizeof(char) * 7);
+    strcpy(result, "(null)");
+    return result;
+  }
+
+  // compute the number of characters we'll need:
+  int n = strlen(rss->link) + strlen(rss->title) + strlen(rss->date) + strlen(rss->description) +1;
+
+  // create a result string
+  char *str = (char *)malloc(sizeof(char) * n);
+
+  // format the rss into the temporary string
+  sprintf(str, "%s, %s, %s, %s", rss->link,
+          rss->title, rss->date,
+          rss->description);
+
+  // return the result
+  return str;
+}
+
 
 void printRss(const Rss * item) {
-    for (int i=0; i<5;++i){
-        for (int j=0;i<strlen(Rss[i]);++j){
-            printf("%c", Rss->title[j]);
-        }
-        printf(" ");
-    }
-    printf("\n");
+    char *str = rssToString(item);
+    printf("%s\n", str);
+    free(str);
+    return;
 }
