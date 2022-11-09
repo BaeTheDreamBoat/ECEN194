@@ -5,7 +5,7 @@
 #include "rss.h"
 
 Rss * createEmptyRss() {
-    return createEmptyRss("","","","");
+    return createRss("","","","");
 }
 
 Rss * createRss(const char * title, const char * link, const char * date, const char * description) {
@@ -43,32 +43,11 @@ void initRss(Rss *feed, const char* title, const char* link, const char* date,
     return;
 }
 
-char *rssToString(const Rss*rss) {
-  if (rss == NULL) {
-    char *result = (char *)malloc(sizeof(char) * 7);
-    strcpy(result, "(null)");
-    return result;
-  }
-
-  // compute the number of characters we'll need:
-  int n = strlen(rss->link) + strlen(rss->title) + strlen(rss->date) + strlen(rss->description) +1;
-
-  // create a result string
-  char *str = (char *)malloc(sizeof(char) * n);
-
-  // format the rss into the temporary string
-  sprintf(str, "%s, %s, %s, %s", rss->link,
-          rss->title, rss->date,
-          rss->description);
-
-  // return the result
-  return str;
-}
-
-
 void printRss(const Rss * item) {
-    char *str = rssToString(item);
-    printf("%s\n", str);
-    free(str);
-    return;
+  int n=strlen(item->title)+strlen(item->link)+strlen(item->date)+strlen(item->description)+5;
+  char *str=(char *)malloc(sizeof(char)*n);
+  sprintf(str, "%s\n%s\n%s\n%s\n",item->title,item->link,item->date,item->description);
+  printf("%s\n---------------------------------\n\n",str);
+  free(str);
+  return;
 }
