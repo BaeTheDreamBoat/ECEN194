@@ -29,6 +29,7 @@ char *revString(char *string){
   for(int i=0;i<=length;++i){
     copy[length-i]=string[i];
   }
+  copy[length+1]='\0';
   return copy;
 }
 

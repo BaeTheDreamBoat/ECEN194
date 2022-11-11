@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Oct 25 10:53:28 2022
+# Make data base, printed on Thu Nov 10 20:40:46 2022
 
 # Variables
 
@@ -22,6 +22,8 @@ LC_ALL = C
 OCULUSBASE = C:\Program Files\Oculus\
 # environment
 USERPROFILE = C:\Users\Ryan Brown
+# environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\Ryan Brown\AppData\Local
 # environment
@@ -39,7 +41,7 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_14632_JAUMSYPQVEJUDWDE
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19044_WHXOERSYTPPTEQEV
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -91,7 +93,7 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 14632
+VSCODE_PID = 19044
 # environment
 CUDA_PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7
 # automatic
@@ -211,7 +213,7 @@ PROCESSOR_REVISION = 0802
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=12/123=10%
+# Load=100/1024=10%, Rehash=0, Collisions=12/124=10%
 
 # Pattern-specific Variable Values
 
@@ -219,7 +221,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
 
 # Directories
 
-# . (key e:/Users/Ryan Brown/Documents/code/ECEN194, mtime 1666295222): 8 files, no impossibilities.
+# . (key e:/Users/Ryan Brown/Documents/code/ECEN194, mtime 1666291622): 8 files, no impossibilities.
 
 # 8 files, no impossibilities in 1 directories.
 
@@ -284,6 +286,6 @@ GNUmakefile:
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=0/18=0%
-# Finished Make data base on Tue Oct 25 10:53:28 2022
+# Finished Make data base on Thu Nov 10 20:40:46 2022
 
  
