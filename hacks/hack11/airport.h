@@ -3,9 +3,16 @@
  * and airport structure.
  */
  
-typedef struct {
-  // TODO: design your structure
-} Airport;
+typedef struct airport_struct{
+    char *gpsId;
+    char *type;
+    char *name;
+    double latitude;
+    double longitude;
+    int elivationFeet;
+    char *city;
+    char *countryAbbrv;
+    } Airport;
 
 /**
  * A factory function to create a new Airport with the given
