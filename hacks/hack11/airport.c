@@ -51,6 +51,8 @@ void initAirport(Airport* airport,
                  int elevationFeet,
                  const char* city,
                  const char* countryAbbrv){
+    strcpy(airport->gpsId,gpsId);
+    /**
     airport->gpsId=gpsId;
     airport->type=type;
     airport->name=name;
@@ -59,11 +61,12 @@ void initAirport(Airport* airport,
     airport->elivationFeet=elevationFeet;
     airport->city=city;
     airport->countryAbbrv=countryAbbrv;
+    */
 }
 
 char* airportToString(const Airport* a){
-    char test[4]="test";
-    return test;
+   char *test = (char *)malloc(sizeof(char)*1);
+   return test;
 }
 
 double getAirDistance(const Airport* origin, const Airport* destination){
