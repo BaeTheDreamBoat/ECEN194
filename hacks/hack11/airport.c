@@ -52,22 +52,28 @@ void initAirport(Airport* airport,
                  const char* city,
                  const char* countryAbbrv){
     strcpy(airport->gpsId,gpsId);
-    /**
-    airport->gpsId=gpsId;
-    airport->type=type;
-    airport->name=name;
+    strcpy(airport->type,type);
+    strcpy(airport->name,name);
     airport->latitude=latitude;
     airport->longitude=longitude;
     airport->elivationFeet=elevationFeet;
-    airport->city=city;
-    airport->countryAbbrv=countryAbbrv;
-    */
+    strcpy(airport->city,city);
+    strcpy(airport->countryAbbrv,countryAbbrv);
 }
 
 char* airportToString(const Airport* a){
-   char *test = (char *)malloc(sizeof(char)*1);
-   return test;
-}
+   int length = strlen(a->gpsId)+strlen(a->type)+strlen(a->name)+5+7+6+strlen(a->city)+strlen(a->countryAbbrv);
+   char *string=(char *)malloc(sizeof(char)*length);
+   sprintf(string, "%s:%s:%s:%.02f:%.02f:%d:%s:%s",a->gpsId,
+                                                    a->type,
+                                                    a->name,
+                                                    a->latitude,
+                                                    a->longitude,
+                                                    a->elivationFeet,
+                                                    a->city,
+                                                    a->countryAbbrv);
+    return string;
+   }
 
 double getAirDistance(const Airport* origin, const Airport* destination){
     double radOriginLatitude=(origin->latitude/180)*M_PI;
@@ -81,6 +87,5 @@ double getEstimatedTravelTime(const Airport* stops,
                               int size,
                               double aveKmsPerHour,
                               double aveLayoverTimeHrs){
-    double test=10.5;
-    return test;
+    return 5;
 }
