@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/Users/Ryan Brown/Documents/Code/ECEN194/hacks/help",
-      "program": "e:/Users/Ryan Brown/Documents/Code/ECEN194/hacks/help/build/Debug/outDebug",
+      "cwd": "e:/Users/Ryan Brown/Documents/Code/ECEN194/labs/Lab13/src",
+      "program": "e:/Users/Ryan Brown/Documents/Code/ECEN194/labs/Lab13/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
